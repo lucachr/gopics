@@ -1,0 +1,25 @@
+{{define "Header"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Title}}</title>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/uikit/2.16.2/css/uikit.css">
+<link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+<header class="uk-navbar uk-navbar-attached">
+    <div class="uk-container uk-container-center">
+        <a href="{{if .LoggedUser}}/{{.LoggedUser}}{{else}}/{{end}}"class="uk-navbar-brand uk-hidden-small">GoPics</a>
+        {{if .LoggedUser }}
+        <ul class="uk-navbar-nav uk-navbar-flip uk-hidden-small">
+            <li><a href="/{{.LoggedUser}}">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <a class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas="{target:'#nav-offcanvas'}" href="#"></a>
+        {{end}}
+        <a href="{{if .LoggedUser}}/{{.LoggedUser}}{{else}}/{{end}}"class="uk-navbar-brand uk-navbar-center uk-visible-small">GoPics</a>
+    </div>
+</header>
+{{end}}

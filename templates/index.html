@@ -1,0 +1,37 @@
+{{template "Header" .}}
+<main>
+<div class="uk-container uk-container-center">
+    <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-3-5 uk-hidden-small uk-text-center">
+            <p class="uk-text-large uk-text-middle">GoPics let you share your photos and images with your friends.</p>
+            <img class="uk-thumbnail-large" src="/static/img/camera.jpeg" alt="Camera">
+        </div>
+        <div class="uk-width-medium-2-10">
+            <form class="uk-form" action="/login" method="POST">
+                <fieldset>
+                    <legend>Login</legend>
+                    {{if .ValError}}
+                    <div class="uk-form-row">
+                        <span class="uk-text-danger">{{.ValError}}</span>
+                    </div>
+                    {{end}}
+                    <div class="uk-form-row">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="uk-form-row">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="uk-form-row">
+                        <button type="submit" class="uk-button uk-button-primary">Login</button>
+                    </div>
+                </fieldset>
+            </form>
+            <hr>
+            <p>Or create a new account</p>
+            <a class="uk-button uk-button-primary" href="/register">Sign Up</a>
+
+        </div>
+    </div>
+</div>
+</main>
+{{template "Footer" .}}

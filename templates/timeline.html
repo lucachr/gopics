@@ -1,0 +1,49 @@
+{{template "Header" .}}
+<main>
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-medium-1-5">
+                <img class="uk-thumbnail uk-border-rounded" src="{{.User.PicURL}}?s=150" alt="{{.User.Name}}">
+                <h1>{{.User.Name}}</h1>
+                <a href="mailto:{{.User.Email}}" class="uk-link-muted"><i class="uk-icon-envelope"></i> {{.User.Email}}</a>
+            </div>
+            <div class="uk-width-medium-4-5">
+                {{if eq .User.Name .LoggedUser}}
+                <div class="uk-panel">
+                    <form class="uk-form" action="/post" method="POST" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>New Post</legend>
+                        <div class="uk-form-row">
+                            <input type="file" name="picture">
+                        </div>
+                        <div class="uk-form-row">
+                            <textarea name="text" placeholder="A description of your image..."></textarea>
+                        </div>
+                        <div class="uk-form-row">
+                            <button class="uk-button uk-button-primary" type="submit">Post!</button>
+                        </div>
+                    </fieldset>
+                    </form>
+                </div>
+                <hr>
+                {{end}}
+                {{range .User.Posts}}
+                <div class="uk-panel">
+                    <div class="uk-comment">
+                        <div class="uk-comment-header">
+                            <img class="uk-comment-avatar" src="{{.AuthorPicURL}}?s=50" alt="{{.AuthorName}}">
+                            <h4 class="uk-comment-title">{{.AuthorName}}</h4>
+                            <div class="uk-comment-meta"><time datetime="{{.Time}}">{{.Time}}</time></div>
+                        </div>
+                        <div class="uk-comment-body uk-overlay">
+                            <img src="/media/{{.Name}}" alt="{{.Text}}">
+                            <div class="uk-overlay-caption">{{.Text}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+</main>
+{{template "Footer" .}}

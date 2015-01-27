@@ -1,0 +1,53 @@
+/**
+ * Copyright (c) 2015, Luca Chiricozzi. All rights reserved.
+ * Released under the MIT License.
+ * http://opensource.org/licenses/MIT
+ */
+main {
+  margin-top: 2em; 
+}
+
+textarea {
+  width: 100%; 
+}
+
+footer {
+  margin: 4em auto; 
+}
+
+.uk-navbar {
+  background-color: #206DD2;
+  padding: 10px 15px; 
+}
+
+.uk-navbar-brand {
+  color: white; 
+}
+
+.uk-navbar-nav > li > a {
+  font-size: 1.3em;
+  color: white; 
+}
+
+.uk-navbar-nav > li > a:hover {
+    color: #206DD2; 
+}
+
+.uk-navbar-brand {
+  font-weight: bold;
+  font-size: 2em; 
+}
+  
+.uk-navbar-brand:hover, .uk-navbar-brand:focus {
+    color: white; 
+}
+
+.uk-navbar-toggle, .uk-navbar-toggle:hover, .uk-navbar-toggle:focus {
+    color: white;
+}
+
+@media (max-width: 340px) {
+    .uk-navbar-brand {
+        font-size: 1.8em;
+    }
+}
