@@ -11,7 +11,7 @@ import "regexp"
 
 // MatchName checks whether a string is a valid name.
 func MatchName(s string) bool {
-	exp := regexp.MustCompile("^[\\pL\\pN !?'.-]+$")
+	exp := regexp.MustCompile("^[\\pL\\pN-]+$")
 	return exp.MatchString(s)
 }
 
