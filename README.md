@@ -8,7 +8,7 @@ The project goal is to built a simple Go web app that is bigger than the
 classics wiki or WebSocket chat examples but still small enough to be useful
 for learning purpose.  
 
-This is the first version of the app, it features only login, forms validation, 
+This is the first version of the app, it supports only login, forms validation, 
 and images upload capabilities. Real time stuff with WebSocket coming soon!
 
 Installation
