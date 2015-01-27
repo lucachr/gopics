@@ -1,6 +1,6 @@
 GoPics
 =======
-
+![A screen of the user timeline in GoPics](https://raw.githubusercontent.com/lucachr/gopics/master/screen.png)
 GoPics is a simple image sharing board built with Go, Redis, UIkit, and 
 good intentions.  
 
